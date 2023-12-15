@@ -15,18 +15,28 @@ LOWEST NUMBER: -13*/
 
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class HighestLowest {
 
     public int highestValues(List<Integer> list)
     {
-        int highest = -9999;
+        int highest = list.get(0);
         for (Integer integer : list) {
             if (highest < integer)
                 highest = integer;
         }
         return highest;
+
+        /*Iterator<Integer> itr = list.iterator();
+        while (itr.hasNext())
+        {
+            if(highest<itr.next())
+                highest = itr.next();
+        }
+
+        return highest;*/
 
     }
 
@@ -49,7 +59,7 @@ public class HighestLowest {
         list.add(-1);
         list.add(23);
         list.add(45);
-        list.add(70);
+        list.add(-70);
         list.add(99);
         list.add(-13);
         list.add(-5);
